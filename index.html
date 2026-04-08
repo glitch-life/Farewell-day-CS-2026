@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Farewell Invite 🎓</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top right, #fce4ec, #e3f2fd, #f3e5f5);
+    overflow-y: auto;
+}
+
+/* 🌸 PAGE LAYOUT */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+/* 🎞️ SIDE MEMORY ROLLS */
+.memory-column {
+    width: 20%;
+    overflow: hidden;
+    position: relative;
+}
+
+.memory-track {
+    display: flex;
+    flex-direction: column;
+    animation: scrollUp 20s linear infinite;
+}
+
+.memory-track img {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 15px;
+    object-fit: cover;
+    height: 150px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* reverse animation for right side */
+.right .memory-track {
+    animation: scrollDown 20s linear infinite;
+}
+
+@keyframes scrollUp {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-50%);}
+}
+
+@keyframes scrollDown {
+    0% {transform: translateY(-50%);}
+    100% {transform: translateY(0);}
+}
+
+/* 💌 CENTER CARD */
+.container {
+    width: 420px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+h2 {
+    color: #6a1b9a;
+}
+
+/* INPUT */
+select, input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: none;
+}
+
+/* BUTTON */
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #ba68c8;
+    color: white;
+    cursor: pointer;
+}
+
+/* IMAGE */
+#photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-top: 10px;
+    border: 3px solid #ce93d8;
+}
+
+/* MESSAGE */
+.message {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    color: #444;
+}
+
+.hidden { display: none; }
+
+#error { color: #d81b60; }
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- LEFT MEMORY -->
+<div class="memory-column">
+    <div class="memory-track">
+<img src="image/1.jpg">
+    <img src="image/2.jpg">
+    <img src="image/3.jpg">
+    <img src="image/4.jpg">
+    <img src="image/5.jpg">
+    <img src="image/6.jpg">
+    <img src="image/7.jpg">
+    <img src="image/8.jpg">
+    <img src="image/9.jpg">
+    <img src="image/10.jpg">
+    <img src="image/11.jpg">
+    <img src="image/12.jpg">
+    <img src="image/13.jpg">
+    <img src="image/14.jpg">
+    <img src="image/15.jpg">
+    <img src="image/16.jpg">
+    <img src="image/17.jpg">
+    <img src="image/18.jpg">
+    <img src="image/19.jpg">
+    <img src="image/20.jpg">
+
+</div>
+</div>
+
+<!-- CENTER -->
+<div class="container">
+
+    <!-- LOGIN -->
+    <div id="loginBox">
+        <h2>🎓 Farewell 2026</h2>
+
+        <select id="nameSelect">
+            <option value="">Select Your Name</option>
+        </select>
+
+        <input id="password" placeholder="Class Number" type="password">
+        <button onclick="login()">Enter</button>
+        <p id="error"></p>
+    </div>
+
+    <!-- INVITE -->
+    <div id="invite" class="hidden">
+        <h2 id="welcome"></h2>
+        <img id="photo">
+
+        <div class="message">
+            💖 You are warmly invited 💖<br><br>
+
+            Some goodbyes are not endings…  
+            they are memories that stay forever 🥺<br><br>
+
+            📅 April 10 | ⏰ 10 PM | 📍 Seminar Hall-2<br><br>
+
+            Let’s gather one last time, laugh louder,  
+            and hold onto every moment 🌸<br><br>
+
+            🎓 Once classmates… forever memories 💫
+        </div>
+    </div>
+
+</div>
+
+<!-- RIGHT MEMORY -->
+<div class="memory-column right">
+    <div class="memory-track">
+    <img src="image/1.jpg">
+    <img src="image/2.jpg">
+    <img src="image/3.jpg">
+    <img src="image/4.jpg">
+    <img src="image/5.jpg">
+    <img src="image/6.jpg">
+    <img src="image/7.jpg">
+    <img src="image/8.jpg">
+    <img src="image/9.jpg">
+    <img src="image/10.jpg">
+    <img src="image/11.jpg">
+    <img src="image/12.jpg">
+    <img src="image/13.jpg">
+    <img src="image/14.jpg">
+    <img src="image/15.jpg">
+    <img src="image/16.jpg">
+    <img src="image/17.jpg">
+    <img src="image/18.jpg">
+    <img src="image/19.jpg">
+    <img src="image/20.jpg">
+    </div>
+</div>
+
+</div>
+
+<script>
+
+/* 🔥 KEEP YOUR STUDENT ARRAY SAME */
+const students = [
+    {name:"ABISEKH S", password:"USCP231620", img:"images/20.png"},
+{name:"ABISH S", password:"USCP231622", img:"images/22.jpg"},
+{name:"AFSAL S", password:"USCP231625", img:"images/25.jpg"},
+{name:"AHILAN R P", password:"USCP231626", img:"images/26.jpg"},
+{name:"AJIN KUMAR E", password:"USCP231627", img:"images/27.jpg"},
+{name:"AKASH JOHNSON J", password:"USCP231628", img:"images/28.jpg"},
+{name:"AKASH R S", password:"USCP231629", img:"images/29.jpg"},
+{name:"AKASH T", password:"USCP231630", img:"images/30.png"},
+{name:"AKHIL R B", password:"USCP231631", img:"images/31.jpg"},
+{name:"ANUJITH N", password:"USCP231632", img:"images/32.jpg"},
+{name:"ASHIK JOE C", password:"USCP231633", img:"images/33.jpg"},
+{name:"ASHWIN JOEL I", password:"USCP231635", img:"images/35.jpg"},
+{name:"ATHISH P S", password:"USCP231636", img:"images/36.png"},
+{name:"BIBIN JIJO V S", password:"USCP231637", img:"images/37.jpg"},
+{name:"DERIN D", password:"USCP231638", img:"images/38.jpg"},
+{name:"GODWIN A", password:"USCP231639", img:"images/39.jpg"},
+{name:"JERLIN J", password:"USCP231640", img:"images/40.jpg"},
+{name:"KISHORE LEON C L", password:"USCP231641", img:"images/41.jpg"},
+{name:"MANMATHAN R", password:"USCP231643", img:"images/43.jpg"},
+{name:"ABISHEK R A", password:"USCP231623", img:"images/23.jpg"},
+{name:"RITHIN ROSE R E", password:"USCP231644", img:"images/44.jpg"},
+{name:"SANGEETH M", password:"USCP231645", img:"images/45.jpg"},
+{name:"SIVA G", password:"USCP231646", img:"images/46.jpg"},
+{name:"SIVAKUMAR D", password:"USCP231647", img:"images/47.png"},
+{name:"SUBIN RAJ S K", password:"USCP231648", img:"images/48.jpg"},
+{name:"SUKUNESH R K", password:"USCP231649", img:"images/49.jpg"},
+{name:"ABINAYA A", password:"USCP231602", img:"images/2.jpg"},
+{name:"ABISHA S G", password:"USCP231603", img:"images/3.jpg"},
+{name:"ABISHA Y S", password:"USCP231604", img:"images/4.jpg"},
+{name:"AKSHA R", password:"USCP231605", img:"images/5.jpg"},
+{name:"AKSHAYA R", password:"USCP231606", img:"images/6.jpg"},
+{name:"ANALIN FEDCI C P", password:"USCP231607", img:"images/7.jpg"},
+{name:"ASHMI I J", password:"USCP231608", img:"images/8.jpg"},
+{name:"ASHWATHI R", password:"USCP231609", img:"images/9.jpg"},
+{name:"ASWINI J R", password:"USCP231610", img:"images/10.jpg"},
+{name:"ASWINI R", password:"USCP231611", img:"images/11.jpg"},
+{name:"BENSHA T", password:"USCP231612", img:"images/12.jpg"},
+{name:"DHANISHA M S", password:"USCP231613", img:"images/13.jpg"},
+{name:"RAGEELA R", password:"USCP231615", img:"images/15.jpg"},
+{name:"VARSHIHA R", password:"USCP231616", img:"images/16.jpg"},
+{name:"VINISHA V R", password:"USCP231617", img:"images/17.png"},
+{name:"PRATHYUSHA M S", password:"PSCP243402", img:"images/02.jpg"},
+{name:"SHAJICA D", password:"PSCP243403", img:"images/03.jpg"},
+{name:"SHALINI K", password:"PSCP243404", img:"images/04.jpg"},
+{name:"ABINESH S", password:"PSCP243405", img:"images/05.png"},
+{name:"SARAN S", password:"PSCP243406", img:"images/06.jpg"},
+{name:"AARATHI M", password:"PSCP243401", img:"images/01.jpg"}
+];
+
+/* DROPDOWN */
+const select = document.getElementById("nameSelect");
+students.forEach(s=>{
+    let opt=document.createElement("option");
+    opt.value=s.name;
+    opt.textContent=s.name;
+    select.appendChild(opt);
+});
+
+/* LOGIN */
+function login(){
+    const name = select.value;
+    const password = document.getElementById("password").value.trim();
+
+    const user = students.find(s=>s.name===name && s.password===password);
+
+    if(user){
+        document.getElementById("loginBox").style.display="none";
+        document.getElementById("invite").classList.remove("hidden");
+
+        document.getElementById("welcome").innerText="Welcome " + user.name + " 💖";
+        document.getElementById("photo").src=user.img;
+
+        confetti({
+            particleCount: 150,
+            spread: 90
+        });
+
+    } else {
+        document.getElementById("error").innerText="Invalid class number ❌";
+    }
+}
+
+</script>
+
+</body>
+</html>
